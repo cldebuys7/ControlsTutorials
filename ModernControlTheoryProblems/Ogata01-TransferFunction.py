@@ -37,10 +37,10 @@ print(parallelSystem)
 
 # Combine the blocks considering G(s) to be the feedforward and H(s) to be the feedback transfer functions, respectively
 #
-# Input ---> + -----[ G(s) ]------> Output
-#            |                 |
-#            |                 |
-#            ---<---[ H(s) ]<---
+# Input ---> + -----[ G(s) ]--------> Output
+#            |                   |
+#            |                   |
+#            ---<---[ H(s) ]<-----
 #
 closedLoopSystem = ct.feedback(G_s, H_s)
 print('Closed-Loop System')
