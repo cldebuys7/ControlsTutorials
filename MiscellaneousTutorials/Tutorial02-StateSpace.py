@@ -42,9 +42,9 @@ print(stepInfoData)
 
 # compute natural frequencies, damping ratios, poles & zeros, and pole-zero map
 ct.damp(sysStateSpace, doprint=True)
-ct.poles(sysStateSpace)
-ct.zeros(sysStateSpace)
-plt.figure(figsize=(8, 6))
+sysStateSpace.pole()
+sysStateSpace.zero()
+# plt.figure(figsize=(8, 6))
 ct.pzmap(sysStateSpace)
 
 # Similar to Matlab SISO tool. Plots bode plots, root locus, and step response.
