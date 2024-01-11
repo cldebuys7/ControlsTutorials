@@ -47,12 +47,12 @@ co = ct.ctrb(A, B)
 controllability = matrix_rank(co)
 
 #############################################################
-# simulation the step response
+# simulation the impulse response
 #############################################################
 time = np.linspace(0, 2, 1000)
 timeReturned, systemOutput = ct.impulse_response(sysStateSpace, time)
 
-# plot the step response
+# plot the impulse response
 # plotOne(timeReturned, systemOutput, 'Step Response', 'time [s]', 'Amplitude', '')
 plotMultiple([timeReturned, timeReturned], [systemOutput[0][0], systemOutput[1][0]], 'Open Loop Impulse Response',
              'time [s]', 'Amplitude', ['cart [m]', 'pendulum [rad]'])
@@ -70,12 +70,12 @@ print(closedLoopSystem)
 time = np.linspace(0, 2, 1000)
 timeReturned, closeLoopOutput = ct.impulse_response(closedLoopSystem, time)
 
-# plot the step response
+# plot the impulse response
 plotOne(timeReturned, closeLoopOutput,
         'Pendulum Impulse Response (Kp, Ki, Kd)=(' + str(Kp) + ', ' + str(Ki) + ', ' + str(Kd) + ')', 'time [s]',
         'pendulum angle [rad]', '')
 
-# obtain info about the step response
+# obtain info about the impulse response
 stepInfoData = ct.step_info(closeLoopOutput, timeReturned)
 print(stepInfoData)
 
@@ -86,11 +86,11 @@ print(closedLoopSystem)
 
 timeReturned, closeLoopOutput = ct.impulse_response(closedLoopSystem, time)
 
-# plot the step response
+# plot the impulse response
 plotOne(timeReturned, closeLoopOutput,
         'Cart Impulse Response (Kp, Ki, Kd)=(' + str(Kp) + ', ' + str(Ki) + ', ' + str(Kd) + ')', 'time [s]',
         'cart position [m]', '')
 
-# obtain info about the step response
+# obtain info about the impulse response
 stepInfoData = ct.step_info(closeLoopOutput, timeReturned)
 print(stepInfoData)
