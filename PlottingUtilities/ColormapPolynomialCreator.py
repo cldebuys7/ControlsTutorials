@@ -1,8 +1,8 @@
 """ ColormapPolynomialCreator
 
 Creates three polynomials, one for each of RGB, based on a colormap. These polynomials can be evaluated in another
-method or even another programming language in order to recreate the colormap. Input to that method is a scalar between
-0 and 1.
+method or even another programming language in order to recreate the colormap. The simplest way to evaluate the
+polynomial in Python is polyval. Input to the method which evaluates the polynomial should be a scalar between 0 and 1.
 """
 
 import matplotlib.pyplot as plt
@@ -22,17 +22,21 @@ def fit_polynomial(data, degree):
     return poly.polyfit(x, data, degree)
 
 
-# TODO: create a method which evaluates the polynomial in Python as an example.
+# Implement this method in another language to use the polynomial representation of the colormap in that language.
+def evaluate_polynomial(coefficients, x):
+    return poly.polyval(x, coefficients)
+
 
 # Sample the Viridis colormap
 num_samples = 50
+degree = 5
 viridis_samples = sample_colormap(num_samples)
 
 # Separate RGB channels and fit polynomials
 r_samples, g_samples, b_samples = zip(*viridis_samples)
-r_coeffs = fit_polynomial(r_samples, 5)  # Degree can be adjusted
-g_coeffs = fit_polynomial(g_samples, 5)
-b_coeffs = fit_polynomial(b_samples, 5)
+r_coeffs = fit_polynomial(r_samples, degree)  # Degree can be adjusted
+g_coeffs = fit_polynomial(g_samples, degree)
+b_coeffs = fit_polynomial(b_samples, degree)
 
 print("Red coefficients:", r_coeffs)
 print("Green coefficients:", g_coeffs)

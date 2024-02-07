@@ -69,3 +69,5 @@ plt.legend()
 plt.ylabel('Amplitude')
 plt.xlabel('time [s]')
 plt.grid(visible=True)
+
+plt.show()
