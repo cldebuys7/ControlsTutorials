@@ -48,6 +48,8 @@ plt.title('U2 to Y2')
 plt.xlabel('time [s]')
 plt.grid(visible=True)
 
+plt.show()
+
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Program 5-2 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> #
 time1, output1 = ct.step_response(system, time, input=1)
 time2, output2 = ct.step_response(system, time, input=0)
