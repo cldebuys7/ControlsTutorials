@@ -1,7 +1,8 @@
-"""Impulse Response of Second-Order Systems from Modern Control Engineering - Ogata, 5th Edition (p. 186-188)
+"""Impulse Response of Second-Order Systems from Modern Control Engineering - Ogata, 5th Edition (p. 178)
 
-This code demonstrates the ability of the Python Control Systems Library (control) to generate the step response of a
-linear system given the state-space system matrices. This is a Matlab example from Ogata's book, converted into Python.
+This code demonstrates the ability of the Python Control Systems Library (control) to generate the impulse response of
+second order systems with increasing damping ratio given their transfer functions. This is a figure from Ogata's book,
+generated in Python.
 """
 
 import numpy as np
